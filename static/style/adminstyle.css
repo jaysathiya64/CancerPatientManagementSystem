@@ -1,0 +1,134 @@
+#header{
+    background: rgb(20, 20, 20);
+    color:azure;
+    font-size: 17px;
+    position: sticky;
+    top: 0;
+    z-index: 10010;
+}
+
+#user-tools {
+    font-size: 14px;
+}
+
+#head .logo {
+    margin: auto;
+    padding: 0;
+}
+
+#head p{
+    padding-top: 3%;
+    padding-right: 7%;
+    vertical-align: bottom;
+}
+
+#head ul li{
+    list-style:none;
+    float:left;
+    justify-content: center;
+}
+
+#head ul li{
+    display: block;
+    color: #24dfe6;
+    justify-content:center;
+    width: 90%;
+}
+#head ul li .logo{
+    display: block;
+}
+
+#branding p{
+    color: #24dfe6;
+    justify-content:center;
+}
+
+#changelist-filter {
+    z-index: 10;
+}
+
+.logo{
+    width: 12%;
+}
+
+.logo img{
+    width: 80%;
+    background-color: white;
+    border: 3px solid white;
+    border-radius: 50px;
+    /* margin: 5px; */
+}
+
+.burger{
+    display: none;
+    position: absolute;
+    cursor: pointer;
+    right: 5%;
+    top:30px;
+}
+
+.line{
+    width: 33px;
+    background-color: white;
+    height: 4px;
+    margin: 5px 3px;
+}
+
+#footer{
+    background: rgb(10, 10, 10);
+    background-size: cover;
+    background-blend-mode: darken;
+    text-align: center;
+    color:white;
+    padding:10px;
+}
+
+.dashboard #content {
+    width: 60%;
+}
+
+.module h2, .module caption, .inline-group h2 {
+    margin: 0;
+    padding: 8px;
+    font-weight: 400;
+    font-size: 13px;
+    text-align: left; 
+    background: linear-gradient(.35turn,#12c2e9 , #c471ed ,#f64f59); 
+   /*  background: linear-gradient(.35turn,#833ab4,#fd1d1d,#fcb045);  */
+    color: #fff;
+}
+
+h1 {
+    margin: 0 0 20px;
+    font-weight: 300;
+    font-size: 20px;
+    color: #0818f5;
+}
+
+@media only screen and (max-width: 570px){
+    #head .logo{
+        justify-content: center;
+        flex-direction: column;
+    }
+}
+
+@media only screen and (max-width: 1500px){
+    #header {
+        flex-direction: column;
+        padding: 15px 30px;
+        justify-content: flex-start;
+    }
+
+    #changelist-filter {
+        order: 4;
+        position: static;
+        width: auto;
+        margin-top: 30px;
+    }
+    /* #user-tools{
+        opacity: 0;
+    } 
+    .burger{
+        display: block;
+    } */
+}

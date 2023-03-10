@@ -1,0 +1,73 @@
+
+.form{
+    background-color:rgb(193, 240, 248);
+    border-radius: 10px;
+    width: 400px;
+    height: 410px;
+    align-items: center;
+    margin-top: 70px; 
+    color: rgb(12, 9, 61);
+   
+}
+.web-header img{
+    margin-top: 10px;
+    justify-content: center;
+    align-items:center
+}
+.form-header{
+    margin: 20px;
+}
+.input{
+    border-radius: 5px;
+    margin: 7px;
+}
+
+.btn{
+    font-size: 20px;
+   color: rgb(241, 237, 235);
+   background-color: rgb(6, 40, 85);
+   width: 150px;
+   margin: 5px;
+}
+.btn:hover{
+    color:aqua;
+}
+#hospitals{
+    margin-top: 5px;
+}
+#lung-doctor{
+    margin-top: 5px;
+}
+#kidney-doctor{
+    margin-top: 5px;
+}
+#nav-item{
+    font-size: 17px;
+    margin-right: 40px;
+    background-color: rgb(97, 240, 233);
+    border-radius: 10px;
+    color: black;
+    height: 35px;
+    width: 90px; 
+    padding-top: 8px;
+    padding-right: 5px;
+    text-align: center;
+    float: right;
+}
+#nav-items{
+    font-size: 17px;
+    margin-right:20px;
+    background-color: rgb(97, 240, 233);
+    border-radius: 10px;
+    color: black;
+    height: 35px;
+    width: 170px;
+    float: right;
+    text-align: center;    
+    padding-top: 8px;
+    padding-right: 5px;
+}
+nav{
+    color: white;
+    margin-top: 30px;
+}

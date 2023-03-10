@@ -1,0 +1,35 @@
+body{
+    background: linear-gradient(50deg, #3ba6fd 60%, #b686dd 60%);
+}
+h2{
+    color: rgb(2, 2, 29);
+}
+#chat-message-input{
+    border-radius: 15px;
+    height: 20px;
+}
+#chat-message-submit{
+    background-color: blue;
+    color: burlywood;
+    font-size: 20px ;
+}
+#chat-message-input{
+    font-size: 20px;
+}
+#chat-log{
+    resize: none;
+    display:block;
+    color: blue;
+    font-weight: bold;
+    font-size: 20px;
+    margin-top: 10px;
+    padding: 10px;
+    background-color: rgb(173, 200, 211);
+}
+
+.web-header img{
+    margin-top: 30px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}

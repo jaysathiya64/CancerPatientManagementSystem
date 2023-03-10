@@ -1,0 +1,408 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+*{
+    margin: 0;
+    padding:0;
+}
+
+body{
+    animation: animate 1s;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+.logo{
+    width:8%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.logo img{
+    width: 70%;
+    background-color: white;
+    border: 3px solid white;
+    border-radius: 50px;
+    margin: 5px;
+}
+.navbar{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: sticky;
+    top:0;
+    cursor: pointer; 
+    /* border-bottom: 5px solid rgb(60, 255, 0); */ 
+    box-shadow: 0 10px 15px #34b1eb;
+   /*  box-shadow:
+    inset 0 0 20px #fff,     
+    inset 10px 0 30px #f0f,    
+    inset -10px 0 80px #0ff,  
+    inset 10px 0 10px #f0f,  
+    inset -10px 0 10px #0ff,
+    0 0 50px #fff,           
+    -10px 0 10px #f0f,        
+    10px 0 10px #0ff;  */
+    
+}
+
+.nav-list{
+    width: 90%; 
+    display: flex; 
+    align-items: center;
+}
+
+.nav-list li{
+    list-style: none;
+    padding: 20px 15px;
+}
+
+.nav-list li a{
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+    font-family: 'Ubuntu', sans-serif;
+    transition: .5s;
+}
+
+.nav-list li a:hover{ 
+    color: rgb(245, 73, 179);
+    font-size: 24px;
+}
+
+.rightNav{ 
+    width: 1%;
+    padding: 0 23px;
+    display: flex; 
+    align-items: center;
+}
+
+.firstSection{
+    height: 78vh;
+}
+
+.box-main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    max-width: 80%;
+    margin: auto;
+    height: 80%;
+}
+
+.firstHalf{
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.secondHalf{
+    width: 40%;
+}
+
+.secondHalf img{
+    width: 100%; 
+    border: 4px solid white;
+    border-radius: 150px;
+    display: block;
+    margin-top: 100px;
+}
+
+.text-big{
+    font-size: 41px;
+    font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.text-small{
+    font-size: 18px;
+}
+
+.btn{
+    padding: 8px 20px;
+    margin: 7px 3px;
+    border: 2px solid white;
+    border-radius: 8px; 
+    background: none;
+    color: white;
+    cursor: pointer;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 20px;
+}
+
+.btn-sm{
+    padding: 6px 10px;
+    vertical-align: middle;
+    font-size: 16px;
+}
+
+.btn-dark{
+    color: black;
+    border: 2px solid grey;
+}
+
+.section{ 
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    max-width: 80%;
+    margin: auto;
+    font-family: 'Ubuntu', sans-serif;
+    padding: 20px;
+    margin-top:40px;
+    margin-bottom:30px;
+    /* background-color: burlywood; */
+    animation: animate 1s;
+    box-shadow: 0px 1px 20px 12px rgba(87,82,238,0.42);
+    -webkit-box-shadow: 0px 1px 20px 12px rgba(87,82,238,0.42);
+    -moz-box-shadow: 0px 1px 20px 12px rgba(87,82,238,0.42);
+}
+
+.section-left{
+    flex-direction: row-reverse;
+}
+
+.paras{
+    padding: 0px 65px;
+}
+
+.sectionTag{
+    padding: 16px 0;
+}
+
+.sectionSubTag{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.thumbnail img{
+    width: 250px;
+    border: 2px solid black;
+    border-radius: 26px;
+    margin-top: 19px;
+}
+
+.contact{
+    background-color: #f6f5f4;
+    height:100%;
+    padding-bottom: 15px;
+}
+
+.suggest{
+    width:auto;
+    display:inline-block;
+}
+
+#hcgHospital{
+    width:25%;
+}
+
+.text-center{
+    text-align: center;
+    padding-top: 30px;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 35px;
+}
+
+.form{
+    max-width: 62%;
+    margin: 25px auto;
+}
+
+.form-input{
+    margin: 14px 0;
+    padding: 5px 13px;
+    width: 100%; 
+    font-size: 19px;
+    border-radius: 6px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    border: 2px solid blue;
+    transition: .5s;
+    outline: none;
+}
+
+.form-input:focus, .form-input:hover{
+    border: 4px solid green;
+    border-radius: 25px;
+    outline:none;
+}
+
+.text-footer{
+    text-align: center;
+    padding: 30px 0;
+    font-family: 'Ubuntu', sans-serif; 
+    display: flex;
+    justify-content: center;
+    color: white;
+}
+
+.burger{
+    display: none;
+    position: absolute;
+    cursor: pointer;
+    right: 5%;
+    top:15px;
+}
+
+.line{
+    width: 33px;
+    background-color: white;
+    height: 4px;
+    margin: 5px 3px;
+}
+
+.chatbot{
+    position:fixed;
+    width:25%;
+    height:32%;
+    background-color: black;
+    right:5%;
+    bottom:8%;
+    opacity: 0.9;
+    border: 2px solid white;
+    border-radius: 10px;
+    color:black;
+    word-wrap: break-word;  
+}
+
+.chatbot .chatarea-main{
+    position:sticky;
+    width:100%;
+}
+
+#chatbot .chatbot_form{
+    position:sticky;
+    width: 100%;
+}
+
+.chatbot_form .patient{
+    margin-left:30%;
+}
+
+.chatbot-btn{
+    position:fixed;
+    width:90px;
+    height:90px; 
+    right:1%;
+    bottom: 3%;
+    color:white;
+    text-align: center;
+    margin-top:2px;
+    background: linear-gradient(.35turn,#12c2e9 , #c471ed ,#f64f59); 
+    box-shadow: 2px 2px 5px #f64f59,
+                -2px -2px 5px #12c2e9;
+    border-radius: 50%;
+    transition: .5s;
+} 
+
+.chatbot-btn:hover{
+    width:100px;
+    height:100px;
+}
+
+/* feedback css */
+
+#form{
+    background-color:rgb(193, 240, 248);
+    border-radius: 10px;
+    width: 500px;
+    height: 355px;  
+    color: rgb(37, 9, 116);
+}
+
+.web-header img{
+    margin-top: 20px;
+}
+
+.form-header{
+    margin: 20px;
+}
+
+.input{
+    border-radius: 5px;
+    margin: 7px;
+    width:75%;
+    outline:none;
+}
+
+.btn{
+   font-size: 20px;
+   color: rgb(241, 237, 235);
+   background-color: rgb(6, 40, 85);
+   border-radius: 3px;
+   margin: 5px 5px 5px 0px;
+   transition: 0.5s;
+   outline:none;
+}
+
+.btn:hover{
+    color:aqua;
+    background-color: black;
+    border: 3px solid red;
+    border-radius: 15px;
+    outline: none;
+}
+
+.fdbk{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 80%;
+    margin: auto;
+    padding-top: 40px;
+}
+
+.fdbk a{
+    text-decoration: none;
+    color: #f6f5f4;
+}
+@keyframes animate{
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/*.blink:before {
+    content: "";
+    width: 0px;
+    height: 0px;
+    position: fixed;
+    border-left: 14px solid red;
+    border-right: 7px solid transparent;
+    border-top: 7px solid red;
+    border-bottom: 10px solid transparent;
+    right: 3%;
+    bottom: 10.6%;
+}
+
+.blink {
+    animation: blink .5s infinite;
+} 
+
+ @keyframes animate {
+    0% {
+        text-decoration: none;
+    }
+    100% {
+        text-decoration: wavy;
+    }
+}
+
+#chatbot_greeting{
+    right: 0.5%;
+    bottom: 12%;
+    width:64px;
+    height: 50px;
+    border: none; 
+} */
+
+/* .chatbot-btn:hover {
+    text-shadow: 0px 0px 10px white;
+    background: radial-gradient(ellipse at center,  #71B1F5, blue);
+} */

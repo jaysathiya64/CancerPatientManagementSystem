@@ -1,0 +1,87 @@
+
+@media only screen and (max-width: 1390px){
+    .nav-list{
+        flex-direction: column;
+    }
+    .logo{
+        padding-top:10px;
+    }
+    .navbar{
+        height: 447px;
+        flex-direction: column;
+        transition: all 0.7s ease-out;
+        transition-timing-function: cubic-bezier(0, .01, 0.5, 2);
+    }
+    .rightNav{
+        text-align: center;
+    }
+    .box-main{
+        flex-direction: column-reverse;
+        max-width: 100%;
+    }
+
+    #search{
+        width: 100%;
+    }
+    .burger{
+        display: block;
+    }
+    .h-nav-resp{
+        height: 72px;
+    }
+    .v-class-resp{
+        opacity: 0;
+    }
+    .section{
+        flex-direction: column-reverse;
+    }
+    .text-small{
+        text-align: center;
+    }
+    .text-big{
+        text-align: center;
+    }
+    .buttons{
+        text-align: center;
+    }
+    .paras {
+        padding: 0px;
+    }
+    #chatbot{
+        width:70%;
+        right:7%;
+    }
+    #chatbot .patient{
+        margin-left:35%;
+    }
+    #hcgHospital{
+        width:80%;
+    }
+    .box-main .text-big{
+        font-size: 25px;
+    }
+    .box-main .text-small{
+        font-size: 13px;
+    }
+    .secondHalf {
+        width: 60%;
+    }
+} 
+
+@media only screen and (max-width: 700px){
+    #chatbot{
+        right:11%;
+    }
+    #chatbot .patient{
+        margin-left:20%;
+    }
+    #hcgHospital{
+        width:100%;
+    }
+    #vresp{
+        width:100%;
+    }
+    .secondHalf {
+        width: 90%;
+    }
+}

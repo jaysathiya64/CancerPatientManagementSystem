@@ -1,0 +1,145 @@
+
+/* navigation bar background  */
+.bg{
+    background-color: rgb(66, 4, 4);
+    border: none;
+}
+
+/* for any active navigation bar lement */
+.active1{
+    background-color: rgb(182, 40, 15);
+}
+.home-margin{
+    margin-left: 30px;
+}
+.container-semester::before{
+    background:url(main.jpg);
+}
+.site-head{
+    font-size: 20px;
+    display: inline-block;
+    color: lightgray;
+}
+.container-fluid{
+    margin-top: 13px; 
+}
+
+.site-head > li:hover{
+    color: yellow;
+}
+
+.nav-list1 {
+    font-size: 20px;
+    display: inline;
+    list-style-type: none;
+    text-decoration: none;
+    padding: 10px;
+}
+.nav-list1 a{
+    color: lightgray;
+}
+.nav-list1 a:hover{
+    color: yellow;
+}
+
+/* search box  */
+input[type=text] {
+    width: 130px;
+    height: 35px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 20px;
+    font-size: 15px;
+    background-color: white;
+    background-image: url('download1.png');   
+    float: right;
+    margin-bottom: 12px;
+    background-position: 5px 5px; 
+    background-repeat: no-repeat;
+    padding: 12px 20px 12px 40px;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+  }
+  /* when focus got on search box at that time it width is changed */
+  input[type=text]:focus {
+    width: 25%;
+  } 
+
+.semester .jumbotron {
+    margin-top: 105px;
+}
+.semester .jumbotron #dept{
+    font-size: 35px;
+    text-align: center;
+    margin-top: 0px;
+}
+.semester .jumbotron #semh{
+    text-align: center;
+    margin-top: 35px;
+    color: red;
+}
+.semester .jumbotron .content .sem-link{
+    display: block;
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    font-size: 22px;
+    color: rgb(182, 40, 15);
+}
+footer .container-fluid{
+    background-color: rgb(94, 46, 46);
+    font-size: 20px;
+    color: silver;
+    font-family: 'Times New Roman', Times, serif;
+}
+.about>b{
+    font-size: 25px;
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+.contact>b{
+    font-size: 25px;
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+footer .container-fluid .row p{
+    margin-bottom: 20px;
+}
+/* media quries: when screen size less than or equal to 767px at that time specific command is fire */
+@media only screen and (max-width:767px){
+   .nav-list1{
+      /* text-align: center; */
+      display: block;
+      padding: 2px;
+     
+  }
+  .home-margin{
+      margin-left: 0px;
+  }
+  
+ input[type=text]{
+      width: 100%; 
+     align-content: center;
+     float: none;
+ }
+ .semester .jumbotron {
+    margin-top: 270px;
+}
+}
+
+@media (min-width:767px) and (max-width:931px) {
+  input[type=text]{
+      width: 100%;
+      margin-top: 10px;
+  }
+  .home-margin{
+      margin-left: 15px;
+  }
+  .container-fluid .row h4{
+    margin-top: 205px;
+}
+  
+}

@@ -1,0 +1,59 @@
+
+.form{
+    background-color:rgb(193, 240, 248);
+    border-radius: 10px;
+    width: 400px;
+    height: 410px;
+    align-items: center;
+    margin-top: 100px; 
+    color: rgb(12, 9, 61);
+   
+}
+.web-header img{
+    margin-top: 10px;
+}
+.form-header{
+    margin: 20px;
+}
+.input{
+    border-radius: 5px;
+    margin: 7px;
+}
+
+.btn{
+    font-size: 20px;
+   color: rgb(241, 237, 235);
+   background-color: rgb(6, 40, 85);
+   width: 150px;
+   margin: 5px;
+}
+.btn:hover{
+    color:aqua;
+}
+#hospitals{
+    margin-top: 5px;
+}
+#khospital{
+    margin-top: 5px;
+}
+#blood-doctor{
+    margin-top: 5px;
+}
+#lung-doctor{
+    margin-top: 5px;
+}
+#kidney-doctor{
+    margin-top: 5px;
+}
+#a{
+    font-size: 17px;
+    float: right;
+    margin-right: 70px;
+    background-color: rgb(240, 97, 97);
+    border-radius: 10px;
+    color: black;
+    height: 35px;
+    width: 70px;
+    padding-left: 8px;    
+    padding-top: 4px;
+}
