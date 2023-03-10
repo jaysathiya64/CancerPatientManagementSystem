@@ -1,0 +1,152 @@
+{% extends 'base.html' %}
+{% load static from static %}
+{% block styles %}
+<title>Register</title>
+<script type="text/javascript">
+    function myFunction() {
+        var x = document.getElementById("p1");
+        var y = document.getElementById("p2");
+        if (x.type === "password") {
+          x.type = "text";
+        } 
+        else { 
+          x.type = "password";
+        }
+
+        if (y.type === "password") {
+            y.type = "text";
+        }
+        else {
+            y.type = "password";
+        }
+    }
+</script>
+<style>
+    body{
+        background-repeat: no-repeat;
+        animation: animate 1s;
+        width:100%;
+        height:100vh;
+    }
+    .regform{
+        background-color:rgb(193, 240, 248);
+        border-radius: 10px;
+        width: 500px;
+        height: auto; 
+        margin-top: 130px;  
+        margin-bottom: 30px;  
+        color: rgb(37, 9, 116);
+        background: linear-gradient(.35turn,#C9FFBF,#FFAFBD);
+    }
+    .navbar{
+        display: none;
+    }
+    .web-header img{
+        margin-top: 20px;
+    }
+    
+    .form-header{
+        margin: 20px;
+    }
+    
+    .input{
+        border-radius: 5px;
+        margin: 7px;
+        width:75%;
+        padding:3px;
+        transition: .5s;
+        outline: none;
+    }
+    .input:focus{
+        border-radius: 15px;
+        border-color: #20e70e;
+        padding:7px;
+        outline: none;
+    }
+    
+    #show{
+        font-size: 20px;
+        width:7%;
+    }
+
+    .btn{
+        font-size: 20px;
+        color: rgb(241, 237, 235);
+        background-color: rgb(6, 40, 85);
+        width: auto;
+        border-radius: 3px;
+        margin:7px;
+        outline: none;
+    }
+     
+    .btn:hover{
+        color:aqua;
+        background-color: black;
+        outline: none;
+    }
+
+    @keyframes animate{
+        from {
+            opacity: 0;
+            transform: translateY(-20px);
+        }
+    
+        to{
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .input{
+        border: 2px solid red;
+        padding: 3px;
+        width:80%;
+    }
+    .text-footer{
+        color:black;
+    }
+    @media only screen and (max-width: 700px){
+        .regform{
+            width: 95%;
+            height:100%;
+        }
+    }
+</style>
+{% endblock  %}
+
+{% block content %}
+
+<center>
+    <div class="regform">
+        <div class="web-header">
+            <img src="{% static 'images/CPMS.png' %}" width="70" height="70" alt="CPMS_Logo">
+            
+        </div>
+        <form action="register" method="POST">
+            {% csrf_token %}
+            <div class="input-group">
+                <h3 class="form-header">Create a new account</h3>
+                <input class="input" type="text" name='first_name' placeholder="First name" required><br>
+                <input class="input" type="text" name='last_name' placeholder="Last name" required><br>
+                Please make sure that you remember this username for further use.
+                <input class="input" type="text" name='username' placeholder="User name" required><br>
+                <input class="input" type="email" name='email' placeholder="Email id" required><br>
+                <input class="input" type="password" id="p1" name='password1' placeholder="Password" onchange="form.password2.pattern=this.value" required><br>
+                <input class="input" type="password" id="p2" name='password2' placeholder="Confirm Password" pattern="" required><br>
+                <input id="show" type="checkbox" onclick="myFunction()" style="margin: 0;">Show Password<br>
+
+                <input class="btn submit" type="Submit"><br>
+
+                {% if messages %}
+                    {% for msg in messages %}
+                        <script>
+                            alert("{{msg}}")                                    
+                        </script>
+                    {% endfor %}
+                {% endif %}
+            </div>
+        </form>
+    </div>
+</center>
+
+{% endblock content %}

@@ -1,0 +1,55 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="icon" href="{% static 'CPMS.png' %}" type="image/png" sizes="16x16">
+    <link rel="stylesheet" type="text/css" href="{% static 'seeappointment.css' %}">
+    <title>Your appointment is booked</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light " style="background-color: aqua;">
+        <a class="navbar-brand" href="#">
+            <img src="{% static 'CPMS.png' %}" width="50" height="50" class="d-inline-block align-top" alt="">
+            
+          </a>
+        <a class="navbar-brand" href="#">CPMS</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav">
+            
+            <a class="nav-item nav-link " style="font-size: 20px;font-weight:500" href="bookap">Book an appointment</a> 
+            <a class="nav-item nav-link" style="font-size: 20px;font-weight:500" href="/chat">Chat With Doctor</a>
+            <a class="nav-item nav-link" style="font-size: 20px;font-weight:500" href="/sfeedback">Give Feedback</a>
+            <a class="nav-item nav-link" style="font-size: 20px;font-weight:500" href="ulogout">Logout</a>
+          
+          </div>
+        </div>
+      </nav>
+    <center>
+        {% for message in messages%}
+            <h3>{{message}}</h3>
+        {% endfor %}
+    </center>
+        <div id="div">
+            {%csrf_token%}
+            {% for ap in bookap %}
+            
+                <p>{{ap.ap_id}}&nbsp;&nbsp;)&nbsp;&nbsp;
+                    Name:{{ap.ap_patient_fname}} &nbsp;{{ap.ap_patient_lname}}&nbsp;&nbsp;|&nbsp;&nbsp;
+                    Mo. Number:{{ap.ap_patient_number}}&nbsp;&nbsp;|&nbsp;&nbsp;
+                    Email:{{ap.ap_patient_email}}&nbsp;&nbsp;|&nbsp;&nbsp;
+                    Cancer Type:{{ap.cancer_type}}&nbsp;&nbsp;|&nbsp;&nbsp;
+                    Appointment date and time:{{ap.ap_time}}&nbsp;&nbsp;|&nbsp;&nbsp;
+                    Hospital:{{ap.h_name}}&nbsp;&nbsp;|&nbsp;&nbsp;Doctor Name:{{ap.d_name}}
+                    <a href="/cancelap/{{ap.ap_id}}" class="cancelbtn">Cancel</a>                  
+                <hr>             
+            {% endfor %}            
+        </div>
+    
+</body>
+</html>

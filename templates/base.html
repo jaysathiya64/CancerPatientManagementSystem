@@ -1,0 +1,49 @@
+{% load static from static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="{% static 'images/iconlogow.jpg' %}" type="image/png" sizes="18x18">
+    <link rel="stylesheet" href="{% static 'style/style.css' %}">
+    <link rel="stylesheet" href="{% static 'style/responsive.css' %}">
+    {% block styles %}
+    
+    {% endblock %}
+</head>
+<body>
+    <nav style="background: black;" class="navbar h-nav-resp">
+        <ul class="nav-list v-class-resp">
+            <div class="logo"><img src="{% static 'images/CPMS.png' %}" alt="logo"></div>
+            <li style="color:aqua;font-size:medium;">Cancer patient Management System(CPMS)</li>
+            <li><a href="/">Home</a></li>
+            {% if request.session.uname %}
+                <li style="color:aqua; font-size: 20px;">Hello, {{request.session.uname}}</li>
+                <li><a href="accounts/logout">Logout</a></li>
+                <li><a href="myapp">My Appointment(s)</a></li>
+            {% else %}
+                <li><a href="accounts/register">Register</a> </li>
+                <li><a href="accounts/login">Login</a><br> </li>
+            {% endif %}
+            <li><a href="bookapp">Book Appointment</a></li>
+        </ul>
+        <div class="rightNav v-class-resp">
+        </div> 
+        <div class="burger">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+    </nav>
+    {% block content %}
+   
+    {% endblock%}
+    <footer class="background">
+        <p class="text-footer">
+            Copyright &copy; 2021 - www.CancerpatientManagementSyatem.com - All rights reserved
+        </p>
+    </footer>
+    <script src="{% static 'js/resp.js' %}"></script>
+    <script src="{% static 'js/chatbot.js' %}"></script>
+</body>
+</html>

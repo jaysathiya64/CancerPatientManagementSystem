@@ -1,0 +1,90 @@
+{% extends 'base.html' %}
+{% load static from static %}
+
+{% block styles %}
+<title>Payment details</title>
+<style>
+    body{
+        animation: animate 1s;
+    }
+    .background{
+        background: rgba(36, 34, 34, 0.514) url("{% static 'images/img_h1.jpg' %}");
+        background-size: cover;
+        background-blend-mode: darken;
+    }
+    .content{
+        height:100%;
+        width:98%;
+        margin:auto;
+    }
+    .content h3{
+        margin-top:30px;
+    }
+    .content ul li{
+        text-decoration: none;
+        list-style: none;
+    }
+    .back{
+        position:fixed;
+        background: black;
+        top:3%;
+        left:5%;
+        padding:6px;
+        border-radius: 8px;
+    }
+
+    .back:hover{
+        background: rgb(221, 29, 29);
+    }
+
+    .back a{
+        text-decoration: none;
+    }
+
+    .back a span{
+        text-decoration: none;
+        color: azure;
+    }
+    @media only screen and (max-width: 600px){
+        .content{
+            width:90%;
+            height:100%;
+            margin:auto;
+        }
+        img{
+            width:90%;
+        }
+    }
+    
+    @keyframes animate{
+        from {
+            opacity: 0;
+            transform: translateY(-20px);
+        }
+    
+        to{
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+</style>
+
+{% endblock  %}
+
+{% block content %}
+
+<section class="content">
+    <center>
+    <h3>Tips for Managing the Costs of Cancer Treatment</h3><br>
+       <ul>
+           <li>- Know what to expect. Learn as much as you can about the costs before you start treatment.</li>
+           <li>- Understand your health insurance. If you have health insurance, call the company and ask about your benefits.</li>
+           <li>- Ask about a payment plan. You may be able to arrange to make payments you can afford.</li>
+           <li>- Ask about any charges you don’t understand. If you don’t recognize a charge on your bill, call the service provider and ask about it.</li>
+           <li>- Save money on medicine. Ask your doctor if you can take a generic version of a name-brand medicine. Find out about discount drug programs, and talk to your health insurance company if you have one.</li>
+       </ul> 
+    <br>
+    <!-- <button class="back"><a href="/"><span>Back</span></a></button> -->
+    </center>
+</section>
+{% endblock content %}

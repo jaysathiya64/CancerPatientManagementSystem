@@ -1,0 +1,105 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"> -->
+    <link rel="icon" href="{% static 'CPMS.png' %}" type="image/png" sizes="16x16">
+    <link rel="stylesheet" href="{% static 'apfile.css' %}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>Book An Appointment</title>
+    
+    <script>
+        $(document).ready(function() {
+            $('#hospitals').hide();
+            $('#kidney-doctor').hide();
+            $('#lung-doctor').hide();
+
+            $('#cancertype').change(function () {
+                if ($('#cancertype option:selected').text() == "LUNG"){
+                    $('#hospitals').show();
+                    $('#lung-doctor').show();
+                    $('#kidney-doctor').hide();
+                }
+            });
+        });
+        $(document).ready(function() {
+            $('#cancertype').change(function () {
+                if ($('#cancertype option:selected').text() == "KIDNEY"){
+                    $('#hospitals').show();   
+                    $('#lung-doctor').hide();              
+                    $('#kidney-doctor').show();
+                }
+            });
+        });
+       
+        
+    </script>
+</head>
+
+<body>
+    <nav class="nav">
+        hello
+        <a id="nav-item"  href="ulogout">Logout</a>
+        <a id="nav-items"  href="/chat">Chat With Doctor</a>
+        <a id="nav-items"  href="/seeappointment">See an Appointment</a>
+    </nav>
+    <center>
+        <div class="form">
+            <div class="web-header">
+                <img src="{% static 'CPMS.png' %}" width="70" height="70" alt="">
+            </div>
+            <form action="bookap" method="POST">
+                
+                    {%csrf_token%}
+                    <div class="input-group">
+                        <h3 class="form-header">Book An Appointment</h3>
+                        <input class="input" type="text" value="Jay" placeholder="Patient First Name" name="ap_patient_fname" required size="16">
+                        <input class="input" type="text" value="Sathiya" placeholder="Patient Last Name" name="ap_patient_lname" required size="16">
+                        <input class="input" type="email" value="jays12@gmail.com" placeholder="Patient Email Address" name="ap_patient_email" size="40"
+                            required><br>
+                        <input class="input" type="text" placeholder="Mobile Number" name="ap_patient_number" required maxlength="10" size="40"><br>
+                         <b>Time for Appointment</b><input class="input"  type="datetime-local" name="ap_time"
+                            required><br>
+                        Cancer Type:
+                        <select id="cancertype" name="cancertype" required>
+                            <option value="FIRST">-------</option>
+                            <option value="LUNG">LUNG</option>
+                            <option value="KIDNEY">KIDNEY</option>
+
+                        </select>
+                        <br>
+                        <select id='hospitals' name = 'hospitals' required> 
+                            <option value='HCG'>HCG</option>
+                            <option value='SHALBY'>SHALBY</option>
+                            <option value='CIIMS'>CIIMS</option>
+                            <option value='CIVIL'>CIVIL</option>               
+                        </select>
+                        
+                        <select id='kidney-doctor' name='doctors' required>
+                            <option>DR.JAYESH PATEL</option>
+                            <option>DR.MAHESH PATEL</option>
+                            <option>DR.JIGNESH SHAH</option>
+                        </select>
+                        
+                        <select id='lung-doctor' name='doctors' required>
+                            <option>DR.JAY SATHIYA</option>
+                            <option >DR.KAUSTUBH PATEL</option>
+                            <option disabled>DR.KEYUR TRIVEDI</option>
+                        </select> <br>                 
+                        
+                        <input class="btn" type="submit" value="Submit" name="submit">
+                        <input class="btn" type="reset" value="Reset" name="reset">
+                    </div>
+            </form>
+        </div>
+        {% for message in messages%}
+            <h3>{{message}}</h3>
+        {% endfor %}
+    </center>
+
+    
+</body>
+</html>

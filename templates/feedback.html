@@ -1,0 +1,38 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="icon" href="{% static 'CPMS.png' %}" type="image/png" sizes="16x16">
+    <link rel="stylesheet" href="{% static 'feedback.css' %}">
+    <title>Give a Feedback</title>
+</head>
+
+<body>
+    <center>
+        <div class="form">
+            <div class="web-header">
+                <img src="{% static 'CPMS.png' %}" width="70" height="70" alt="">
+            </div>
+            <form action="sfeedback" method="POST">
+                {%csrf_token%}
+                    <div class="input-group">
+                        <h3 class="form-header">Feedback Form</h3>
+                        <input type="text" class="input" placeholder="Patient First Name" name="p_fname" required size="16">
+                        <input type="text" class="input" placeholder="Patient Last Name" name="p_lname" required size="16"><br>
+                        <input class="input" type="email" placeholder="Patient Email Address" name="ap_patient_email" size="40"
+                        required><br>
+                        <b>Give your feedback</b><textarea class="input" cols="42" rows="2"
+                        name="ap_label" required></textarea><br>
+                        <input class="btn" type="submit" value="Submit" name="submit">       
+                    </div>
+            </form>
+            {% for message in messages%}
+                <h3>{{message}}</h3>
+            {% endfor %}
+    </div>
+    </center>
+</body>

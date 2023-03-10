@@ -1,0 +1,40 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="icon" href="{% static 'CPMS.png' %}" type="image/png" sizes="16x16">
+    <link rel="stylesheet" href="{% static 'signup.css' %}">
+    <title>Sign Up Page</title>
+</head>
+<body>
+    <center>
+        <div class="form">
+            
+            <div class="web-header">
+                <img src="{% static 'CPMS.png' %}" width="70" height="70" alt="">
+            </div>
+            <h3>Register Your Hospital</h3>
+            <form action="hsignup" method="POST">
+                {%csrf_token%}
+                <div class="input-group">
+                    <input class="input" type="text" placeholder="Enter Hospital Name in capital format" name="h_name" required size="35">
+                    <input class="input" type="Email" placeholder="Enter Email Address" name="h_email" required size="35">
+                    <input class="input" type="password" placeholder="Enter password" name="h_pwd" required size="35" minlength="8"><br>
+                    <h4>Address of hospital:</h4><textarea name="h_address" id="" cols="37" rows="3" required></textarea>
+                    <input class="input" type="text" placeholder="Enter pincode" name="h_pincode" required size="35"><br>
+                    <input class="btn" type="submit" value="Submit" name="submit">
+                    <input class="btn" type="reset" value="Reset" name="reset">
+                </div>    
+            </form>
+        </div>
+        {% for msg in messages%}
+    <h2>{{msg}}</h2>
+  {% endfor %}
+    </center>
+    
+</body>
+</html>

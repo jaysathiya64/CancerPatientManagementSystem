@@ -1,0 +1,295 @@
+{% load static %}
+{% load embed_video_tags %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="{% static 'images/iconlogow.jpg' %}" type="image/png" sizes="18x18">
+    <link rel="stylesheet" href="{% static 'style/style.css' %}">
+    <link rel="stylesheet" href="{% static 'style/responsive.css' %}">
+    <title>Cancer patient Management System(CPMS)</title>
+    <style> 
+        .background{
+            background: rgba(36, 34, 34, 0.514) url("{% static 'images/img_h1.jpg' %}");
+            background-size: cover;
+            background-blend-mode: darken;
+        }
+    </style>
+</head>
+
+<body>
+    <nav style="background: black;" class="navbar h-nav-resp">
+        <ul class="nav-list v-class-resp">
+            <div class="logo"><img src="{% static 'images/CPMS.png' %}" alt="logo"></div>
+            
+            <li style="color: aqua;font-size:20px;font-family: 'Ubuntu', sans-serif;">Cancer patient Management System(CPMS)</li>
+            <li><a href="/">Home</a></li>
+            {% if request.session.uname %}
+                <li style="color:aqua; font-size: 20px;">Hello, {{request.session.uname}}</li>
+                <li><a href="accounts/logout">Logout</a></li>
+                <li><a href="myapp">My Appointment(s)</a></li>
+                <li><a href="bookapp">Book Appointment</a></li>
+            {% else %}
+                <li><a href="accounts/register">Register</a> </li>
+                <li><a href="accounts/login">Login</a><br> </li>
+            {% endif %}
+            
+        </ul>
+        <div class="rightNav v-class-resp">
+        </div> 
+        <div class="burger">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+    </nav>
+
+    <section class="background firstSection">
+        <div class="box-main">
+            <div class="firstHalf">
+                <p class="text-big">The good physician treats the disease; the greate physician treates the patient who has the disease.</p>
+                <p class="text-small">We'll get through this together, knowing there are brighter days ahead for both of us.
+                    Whatever support you need, We are here for you...</p>
+                <!-- <div class="buttons">
+                    <button class="btn">Subscribe</button>
+                    <button class="btn">Watch Video</button>
+                </div> -->
+            </div>
+
+            <div class="secondHalf">
+                <img src="{% static 'images/img1.jpg' %}" alt="Doctor image">
+            </div>
+        </div>
+    </section>
+
+    <center><h2 class="text-big" style="margin-top:10px;">Basic types of cancer:</h2>
+    </center>
+    <section class="section section-left">
+        <div class="paras">
+        <p class="sectionTag text-big">Bladder cancer</p>
+        <p class="sectionSubTag text-small">Bladder cancer begins when healthy cells in the bladder lining—most commonly urothelial cells—change and grow out of control, forming a mass called a tumor. Urothelial cells also line the renal pelvis and ureters. Cancer that develops in the renal pelvis and ureters is also considered a type of urothelial cancer and is often called upper tract urothelial cancer. In most cases, it is treated in much the same way as bladder cancer and is described in this guide. A tumor can be cancerous or benign. A cancerous tumor is malignant, meaning it can grow and spread to other parts of the body. A benign tumor means the tumor can grow but will not spread. Benign bladder tumors are very rare</p>
+        </div>
+        <div class="thumbnail">
+            <img src="{% static 'images/bladder.jpg' %}" alt="Bladder cancer image" class="imgFluid">
+        </div>
+    </section>
+
+    <section class="section" id="about">
+        <div class="paras">
+        <p class="sectionTag text-big">Lung cancer</p>
+        <p class="sectionSubTag text-small">Cancer is a disease in which cells in the body grow out of control. When cancer starts in the lungs, it is called lung cancer.
+
+            Lung cancer begins in the lungs and may spread to lymph nodes or other organs in the body, such as the brain. Cancer from other organs also may spread to the lungs. When cancer cells spread from one organ to another, they are called metastases.
+            
+            Lung cancers usually are grouped into two main types called small cell and non-small cell.
+            </p>
+        </div>
+        <div class="thumbnail">
+            <img src="{% static 'images/lung.jpg' %}" alt="lung image" class="imgFluid">
+        </div> 
+    </section>
+
+    <section class="section section-left" id="services">
+        <div class="paras">
+        <p class="sectionTag text-big">Lymphoma</p>
+        <p class="sectionSubTag text-small">Lymphoma refers to a cancer that originates in the nodes or glands of
+             the lymphatic system, whose job it is to produce white blood cells and clean body fluids,
+              or in organs such as the brain and breast. Lymphomas are classified into two categories:
+               Hodgkin's lymphoma and non-Hodgkin's lymphoma.
+            <br>Types of lymphoma include:
+            <br>- Hodgkin's lymphoma
+            <br>- Non-Hodgkin's lymphoma
+            <br>- Cutaneous lymphoma
+            </p>
+        </div>
+        <div class="thumbnail">
+            <img src="{% static 'images/lymp.png' %}" alt="Lymphoma image" class="imgFluid">
+        </div>
+    </section>
+
+    <section class="section" id="services">
+        <div class="paras">
+        <p class="sectionTag text-big">Breast cancer</p>
+        <p class="sectionSubTag text-small">Cancer begins when healthy cells in the breast change and grow out of control, forming a mass or sheet of cells called a tumor. A tumor can be cancerous or benign. A cancerous tumor is malignant, meaning it can grow and spread to other parts of the body. A benign tumor means the tumor can grow but will not spread.
+
+            Breast cancer spreads when the cancer grows into adjacent organs or other parts of the body or when breast cancer cells move to other parts of the body through the blood vessels and/or lymph vessels. This is called a metastasis.</p>
+        </div>
+        <div class="thumbnail">
+            <img src="{% static 'images/breastcancer.jpg' %}" alt="breast image" class="imgFluid">
+        </div>
+    </section>    
+
+    <section class="section section-left" id="services">
+        <div class="paras">
+        <p class="sectionTag text-big">Prostate cancer</p>
+        <p class="sectionSubTag text-small">Cancer begins when healthy cells in the prostate change and grow out of control, forming a tumor. A tumor can be cancerous or benign. A cancerous tumor is malignant, meaning it can grow and spread to other parts of the body. A benign tumor means the tumor can grow but will not spread.
+
+            Prostate cancer is somewhat unusual when compared with other types of cancer. This is because many prostate tumors do not spread quickly to other parts of the body. Some prostate cancers grow very slowly and may not cause symptoms or problems for years or ever. Even when prostate cancer has spread to other parts of the body, it often can be managed for a long time. So people with prostate cancer, and even those with advanced prostate cancer, may live with good health and quality of life for many years. However, if the cancer cannot be well controlled with existing treatments, it can cause symptoms like pain and fatigue and can sometimes lead to death. An important part of managing prostate cancer is monitoring it for growth over time, in order to find out if it is growing slowly or quickly. Based on the pattern of growth, your doctor can decide the best available treatment options and when to give them.</p>
+        </div>
+        <div class="thumbnail">
+            <img src="{% static 'images/prostate.jpg' %}" alt="prostate image" class="imgFluid">
+        </div>
+    </section>
+
+    <section class="section" id="services">
+        <div class="paras">
+        <p class="sectionTag text-big">Kidney cancer</p>
+        <p class="sectionSubTag text-small">Kidney cancer begins when healthy cells in 1 or both kidneys change and grow out of control, forming a mass called a renal cortical tumor. A tumor can be malignant, indolent, or benign. A malignant tumor is cancerous, meaning it can grow and spread to other parts of the body. An indolent tumor is also cancerous, but this type of tumor rarely spreads to other parts of the body. A benign tumor means the tumor can grow but will not spread.
+            </p>
+        </div>
+        <div class="thumbnail">
+            <img src="{% static 'images/kidney.jpg' %}" alt="Kidney image" class="imgFluid">
+        </div>
+    </section>
+
+    <section class="section section-left" id="services">
+        <div class="paras">
+        <p class="sectionTag text-big">Blood cancer</p>
+        <p class="sectionSubTag text-small">Most blood cancers, also called hematologic cancers, start in the bone marrow, which is where blood is produced. Blood cancers occur when abnormal blood cells start growing out of control, interrupting the function of normal blood cells, which fight off infection and produce new blood cells.</p>
+        </div>
+        <div class="thumbnail">
+            <img src="{% static 'images/blood.jpg' %}" alt="blood cancer image" class="imgFluid">
+        </div>
+    </section>
+
+    <section class="section" id="services">
+        <div class="paras">
+        <p class="sectionTag text-big">Myeloma</p>
+        <p class="sectionSubTag text-small">Myeloma is a type of blood cancer that develops from 
+            cells in the bone marrow called plasma cells. Bone marrow is the spongy tissue found inside 
+            the inner part of some of our large bones. The bone marrow produces different types of blood cells. 
+            <br>Types of lymphoma include:
+            <br>- Light Chain Myeloma
+            <br>- Non-secretory Myeloma
+            <br>- Solitary Plasmacytoma
+            <br>- Extramedullary Plasmacytoma
+            <br>- Monoclonal Gammopathy of Undetermined Significance (MGUS)
+            <br>- Smoldering Multiple Myeloma (SMM)
+            <br>- Immunoglobulin D (IgD) Myeloma
+            </p>
+        </div>
+        <div class="thumbnail">
+            <img src="{% static 'images/myeloma.jpg' %}" alt="myeloma image" class="imgFluid">
+        </div>
+        <br>
+    </section>
+
+    <section class="section section-left" id="services">
+        <div class="paras">
+        <p class="sectionTag text-big">Leukemia</p>
+        <p class="sectionSubTag text-small">Leukemia, also known as blood cancer, is a cancer of the bone marrow that keeps the marrow from producing normal red and white blood cells and platelets. White blood cells are needed to resist infection. Red blood cells are needed to prevent anemia. Platelets keep the body from easily bruising and bleeding.
+
+            Examples of leukemia include acute myelogenous leukemia, chronic myelogenous leukemia, acute lymphocytic leukemia, and chronic lymphocytic leukemia. The terms myelogenous and lymphocytic indicate the type of cells that are involved.
+            
+            <br>Types of leukemia include:
+            
+           <br>- Acute lymphocytic leukemia
+           <br>- Acute myeloid leukemia
+           <br>- Agnogenic myeloid leukemia
+           <br>- Chronic lymphocytic leukemia
+           <br>- Chronic myeloid leukemia
+           <br>- Essential thrombocythemia (ET)
+           <br>- Hairy cell leukemia
+           <br>- Myelodysplastic syndromes (MDS)
+            </p>
+        </div>
+        <div class="thumbnail">
+            <img src="{% static 'images/lukemia.jpg' %}" alt="lukemia image" class="imgFluid">
+        </div>
+    </section>
+     
+    <div class="mVideo">
+        <center>
+        {% for i in obj|slice:":1" %}
+            <br><br>
+            <h1>Motivational Video</h1><br>
+            {{ break }}
+        {% endfor %}
+        {% for i in obj %}
+            {% video i.video '80% x 300' %}
+            <p>&nbsp;</p>
+        {% endfor %}
+        </center>
+    </div>
+
+    <section class="contact" id="contact">
+        <h1 class="text-center">Select your cancer</h1>
+            <div class="form">
+            <!-- <input class="form-input" type="text" name="cancer_type" id="cancer_type" placeholder="Enter your cancer type" required> -->
+
+            <select class="form-input" name="cancer_type" id="cancer_type">
+                <option value="">Select cancer type</option>
+                <option value="lung">Lung</option>
+                <option value="blood">Blood</option>
+                <option value="breast">Breast</option>
+                <option value="prostate">Prostate</option>
+                <option value="bladder">Bladder</option>
+                <option value="tongue">Tongue</option>
+                <option value="head and neck">Head and Neck</option>
+              </select>
+              
+
+            <button class="btn" onclick="suggestHospital()">Search</button><br>
+            <section class="suggest" id="suggest">
+            </section>
+
+            <section class="hcg">
+                <br>
+                <center>
+                    <h3>For most cancer types you can go to <strong>HCG Hospital</strong></h3>
+                    <br>        
+                    <a href="http://www.hcghospitals.in/"><img id="hcgHospital"src="{% static 'images/HCG.jpg' %}" alt="HCG hospital image"></a>
+                </center>
+            </section>
+            <br>
+            </div>
+        
+    </section> 
+    <div class="fdbk">
+        <h3>Help us to improve :&nbsp;</h3><br>
+        <button class="btn"><a href="givefeedback">Give Feedback</a></button>
+    </div>    
+    <div id="space"><br><br><br></div>
+    <section class="chatbot" id="chatbot" style="visibility: hidden; background: linear-gradient(.35turn,#12c2e9, #c471ed,#f64f59);">
+        <center><br><h3>Hi, I am CHATBOT..</h3><br>
+        <hr><br>
+        <h3>Select to get information:  </h3><br> </center>
+        <form class="chatbot_form" autocomplete="off">
+            <input type="radio" class="patient" name="diet" onclick="show(0)" value="diet">
+            <label for="diet"><b>Diet plan</b></label><br>
+            <input type="radio" class="patient" name="physio" onclick="show(1)" value="physio">
+            <label for="physio"><b>Physiotherapy details</b></label><br>
+            <input type="radio" class="patient" name="payment" onclick="show(2)" value="payment">
+            <label for="payment"><b>Payment information</b></label><br>
+        </form>
+        <br>
+        <!-- <div class="chatarea-main"> 
+            <p id="ans"></p>  
+        </div>  -->   
+    </section>
+
+    <img class="chatbot-btn" id="chatbot_btn" src="{% static 'images/chatbot1.gif' %}" onclick="display()" name="imagename">
+
+    {% if messages %}
+        {% for msg in messages %}
+            <script>
+                alert("{{msg}}")                                    
+            </script>
+        {% endfor %}
+    {% endif %}
+
+    <footer class="background">
+        <p class="text-footer">
+            Copyright &copy; 2021 - www.CancerPatientManagementSystem.com - All rights reserved
+        </p>
+    </footer>
+
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="{% static 'js/resp.js' %}"></script>
+    <script src="{% static 'js/chatbot.js' %}"></script>
+
+</body>
+
+</html>

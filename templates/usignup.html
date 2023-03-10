@@ -1,0 +1,40 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="icon" href="{% static 'CPMS.png' %}" type="image/png" sizes="16x16">
+    <link rel="stylesheet" href="{% static 'usignup.css' %}">
+    <title>Signup for User</title>
+</head>
+<body>
+    <center>
+        <div class="form">
+            
+            <div class="web-header">
+                <img src="{% static 'CPMS.png' %}" width="70" height="70" alt="">
+            </div>
+            <h3>Register Yourself</h3>
+            <form action="usignup" method="POST">
+                {%csrf_token%}
+                <div class="input-group">
+                    <input class="input" type="text" placeholder="First Name" name="fname" required size="14">
+                    <input class="input" type="text" placeholder="Last Name" name="lname" required size="14" >
+                    <input class="input" type="text" placeholder="User Name" name="uname" required size="35" ><br>
+                    <input class="input" type="email" placeholder="Email Address" name="email" required size="35"><br>
+                    <input class="input" type="password" placeholder="Enter Password" name="pwd" required size="35">
+                    <input class="btn" type="submit" value="Submit" name="submit">
+                    <input class="btn" type="reset" value="Reset" name="reset">
+                </div>    
+            </form>
+            <a id="link" href="userlogin.html">Login</a><br>
+        </div>
+        {% for message in messages%}
+            <h3>{{message}}</h3>
+        {% endfor %}
+    </center>
+</body>
+</html>

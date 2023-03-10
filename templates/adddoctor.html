@@ -1,0 +1,36 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="{% static 'CPMS.png' %}" type="image/png" sizes="16x16">
+    <link rel="stylesheet" href="{% static 'adddoctor.css' %}">
+    <title>Add Doctor</title>
+</head>
+<body>
+    <center>
+        <div class="form">
+            
+            <div class="web-header">
+                <img src="{% static 'CPMS.png' %}" width="70" height="70" alt="">
+            </div>
+            <h3>Register Doctor</h3>
+            <form action="adddoctor.html" method="POST">
+                {%csrf_token%}
+                <div class="input-group">
+                    <input class="input" type="text" placeholder="Doctor Full Name" name="dname" required size="35">
+                    <input class="input" type="Email" placeholder="Enter Email Address" name="demail" required size="35">
+                    <input class="input" type="password" placeholder="Enter password" name="dpwd" required size="35" minlength="8">
+                    <input class="btn" type="submit" value="Submit" name="dsubmit">
+                    <input class="btn" type="reset" value="Reset" name="dreset">
+                </div>    
+            </form>
+            {% for message in messages%}
+                <h3>{{message}}</h3>
+            {% endfor %}
+        </div>
+    </center>
+</body>
+</html>

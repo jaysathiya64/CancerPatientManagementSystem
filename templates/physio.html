@@ -1,0 +1,95 @@
+{% extends 'base.html' %}
+
+{% block styles %}
+{% load static from static %}
+<title>Physiotherapy details</title>
+<style>
+    body{
+        animation: animate 1s;
+    }
+    .background{
+        background: rgba(36, 34, 34, 0.514) url("{% static 'images/img_h1.jpg' %}");
+        background-size: cover;
+        background-blend-mode: darken;
+    }
+    .content{
+        background: url("{% static 'images/physio.jpg' %}");
+        display: block;
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-size: cover;
+    }
+    .back{
+        position:fixed;
+        background: black;
+        top:3%;
+        left:5%;
+        padding:6px;
+        border-radius: 8px;
+    }
+
+    .back:hover{
+        background: rgb(221, 29, 29);
+    }
+
+    .back a{
+        text-decoration: none;
+    }
+
+    .back a span{
+        text-decoration: none;
+        color: azure;
+    }
+
+    @media only screen and (max-width: 600px){
+        .content{
+            width:100%;
+            height:100%;
+            margin:auto;
+        }
+        img{
+            width:90%;
+        }
+        .back{
+            top:7%;
+            left: 8%;
+        }
+    }
+    
+    @keyframes animate{
+        from {
+            opacity: 0;
+            transform: translateY(-20px);
+        }
+    
+        to{
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+</style>
+
+{% endblock  %}
+
+{% block content %}
+{% load static from static %}
+{% load embed_video_tags %}
+<section class="content">
+    <div class="mVideo">
+        <!-- <button class="back"><a href="/"><span>Back</span></a></button> -->
+        <center>
+        
+        {% for i in obj|slice:":1" %}
+            <br>
+            <h1>Physiotherapy</h1><br>
+            {{ break }}
+        {% endfor %}
+        {% for i in obj %}
+            <br>
+            {% video i.video '80% x 300' %}
+            <p>&nbsp;</p>
+        {% endfor %}
+        </center>
+    </div>
+</section>
+{% endblock content %}

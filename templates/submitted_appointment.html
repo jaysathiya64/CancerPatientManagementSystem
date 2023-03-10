@@ -1,0 +1,83 @@
+{% extends 'base.html' %}
+{% load static from static %}
+{% block styles %}
+<title>Booked Appointment details</title>
+<style>
+    body{
+        animation: animate 1s;
+    }
+    .background{
+        background: rgba(36, 34, 34, 0.514) url("{% static 'images/img_h1.jpg' %}");
+        background-size: cover;
+        background-blend-mode: darken;
+    }
+    .content{
+        height:100%;
+        width:98%;
+        margin:auto;
+        
+    }
+    #td{
+        color:rgb(252, 127, 10);
+    }
+    #mess,#detail{
+        margin:5px;
+    }
+    .back{
+        width:50px;
+        height:auto;
+        background: black;
+        color:antiquewhite;
+        padding:3px;
+        border: 2px solid red;
+        outline: none;
+    }
+    .back a{
+        text-decoration: none;
+    }
+    .back:hover{
+        color:rgb(114, 166, 226);
+        background-color: antiquewhite;
+        border: 2px solid red;
+    }
+
+    @keyframes animate{
+        from {
+            opacity: 0;
+            transform: translateY(-20px);
+        }
+    
+        to{
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+</style>
+
+{% endblock  %}
+
+{% block content %}
+
+<section class="content">
+    <center>
+        <h2 id="mess">Your appointment was successfully booked with this details</h2>
+        <div id="detail"> 
+                <table>
+                    <br>
+                    <tr><td>Your appointment id:</td><td id="td">{{book.ap_id}}</td></tr>
+                    <tr><td>Patient Name:</td><td id="td">{{book.ap_patient_fname}} &nbsp;{{book.ap_patient_lname}}</td></tr>
+                    <tr><td>Patient email:</td><td id="td">{{book.ap_patient_email}}</td></tr>
+                    <tr><td>Patient Mo. Number:</td><td id="td">{{book.ap_patient_number}}</td></tr>
+                    <tr><td>Cancer Type:</td><td id="td">{{book.cancer_type}}</td></tr>
+                    <tr><td>Appointment date and time:</td><td id="td">{{book.ap_time}}</td></tr>
+                    <tr><td>Why you book appointmnet with doctor:</td><td id="td">{{book.ap_label}}</td></tr>
+                    <tr><td>Doctor Name:</td><td id="td">{{book.ap_doc_fname}} &nbsp;{{book.ap_doc_lname}}</td></tr>
+                </table>
+                <br><hr><br>
+                <button class="back"><a href="/"><span>OK</span></a></button>
+
+        </div>
+        
+    </center>
+</section>
+{% endblock content %}

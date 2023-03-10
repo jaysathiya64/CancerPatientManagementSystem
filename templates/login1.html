@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="icon" href="/static/CPMS.png" type="image/png" sizes="16x16">
+    <link rel="stylesheet" href="/static/login.css">
+    <title>Login Page</title>
+</head>
+<body>
+    <center>
+        <div class="form">
+            
+            <div class="web-header">
+                <img src="/static/CPMS.png" width="70" height="70" alt="">
+            </div>
+            <h3>Enter your details for Login</h3>
+            <form action="hlogin" method="POST">
+                <input type="hidden" name="csrfmiddlewaretoken" value="Bekt8REqXKrTNXxyWaEmMQKskZef9lWxRpLRsmPSVTXGlalpNkfNH4c3N9xlG0xt">
+                <div class="input-group">
+                    <input class="input" type="text" placeholder="Enter Hospital Name in capital format" name="h_name" required size="35">
+                    <input class="input" type="password" placeholder="Enter password" name="pwd" required size="35" minlength="8">
+                    <input class="btn" type="submit" value="Submit" name="Submit"> 
+                    <input class="btn" type="reset" value="Reset" name="reset">
+                </div>    
+            </form>
+            <a id="link" href="signup.html">Register new hospital</a><br>
+           </div>
+            {% for msg in messages%}
+                <h2>{{msg}}</h2>
+            {% endfor %}
+    </center>
+    
+</body>
+</html>

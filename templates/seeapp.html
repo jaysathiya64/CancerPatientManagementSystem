@@ -1,0 +1,134 @@
+{% extends 'base.html' %}
+{% load static from static %}
+{% block styles %}
+<title>My Appointment</title>
+<style>
+    body{
+        animation: animate 1s;
+    }
+    .background{
+        background: rgba(36, 34, 34, 0.514) url("{% static 'images/img_h1.jpg' %}");
+        background-size: cover;
+        background-blend-mode: darken;
+    }
+    .content{
+        background:#e4e9fd;
+        border-radius: 10px;
+        width: 800px;
+        height: auto;
+        margin: 30px 10px;
+        border-bottom: 3px solid black;
+    }
+    h3,.appointment{
+        margin:10px;
+        padding:10px;
+    }
+    #hr{
+        margin-top: 5px;
+        margin-bottom: 5px;
+        border-bottom: 3px solid rgb(255, 145, 0);
+    }
+
+    .input{
+        border: 2px solid red;
+        padding: 3px;
+        width:80%;
+        transition: .5s;
+        outline: none;
+    }
+    .input:focus{
+        border-radius: 15px;
+        border-color: #20e70e;
+        padding:7px;
+        outline: none;
+    }
+
+    #td{
+        color:brown;
+    }
+    #tr{
+        border: 1px solid green;
+    }
+
+    .btn-cancel{
+        font-size: 15px;
+        color: rgb(241, 237, 235);
+        background-color: rgb(6, 40, 85);
+        border-radius: 3px;
+        padding: 5px;
+        margin:3px;
+        transition: 0.5s;
+        outline: none;
+    }
+
+    .btn-cancel:hover{
+        background-color: black;
+        padding:6px;
+        border-radius: 15px;
+        border:3px solid red;
+        outline: none;
+    }
+
+    .btn-cancel a{
+        color: white;
+        text-decoration: none;
+    }
+
+    @keyframes animate{
+        from {
+            opacity: 0;
+            transform: translateY(-30px);
+        }
+    
+        to{
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @media only screen and (max-width: 810px){
+        .content{
+            width: 90%;
+            height:100%;
+        }
+    }
+</style>
+
+{% endblock  %}
+
+{% block content %}
+<center>
+<section class="content">
+       
+        <div class="appointment">
+            <h3>Your Appointment(s)</h3>
+            {% if not bookappointment %}
+                <br>
+                <h1>You have not created any appointment yet.!!</h1><br>
+                <button class="btn-cancel"><a href="bookapp">Book appointment</a></button>
+                {{ break }}
+            {% endif %}
+            {% for book in bookappointment %}
+            <hr id="hr"> 
+                            <table>
+                                <tr id="tr"><td>Name:</td><td id="td">{{book.ap_patient_fname}} &nbsp;{{book.ap_patient_lname}}</td></tr>
+                                <tr id="tr"><td>Email:</td><td id="td">{{book.ap_patient_email}}</td></tr>
+                                <tr id="tr"><td>Mobile Number:</td><td id="td">{{book.ap_patient_number}}</td></tr>
+                                <tr id="tr"><td>Cancer Type:</td><td id="td">{{book.cancer_type}}</td></tr>
+                                <tr id="tr"><td>Appointment date and time:</td><td id="td">{{book.ap_time}}</td></tr>
+                                <tr id="tr"><td>Subject:</td><td id="td">{{book.ap_label}}</td></tr>
+                                <tr id="tr"><td>Doctor Name:</td><td id="td">{{book.ap_doc_fname}} &nbsp;{{book.ap_doc_lname}}</td></tr>
+                                <tr><td colspan="2"><button class="btn-cancel"><a href="/deleteapp/{{book.ap_id}}">Delete appointment</a></button></td></tr>
+                            </table>            
+            {% endfor %} 
+
+            {% if messages %}
+                {% for msg in messages %}
+                    <script>
+                        alert("{{msg}}")                                    
+                    </script>
+                {% endfor %}
+            {% endif %}
+        </div>
+</section>
+{% endblock content %}

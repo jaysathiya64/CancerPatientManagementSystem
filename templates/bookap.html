@@ -1,0 +1,27 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="icon" href="{% static 'CPMS.png' %}" type="image/png" sizes="16x16">
+    <link rel="stylesheet" type="text/css" href="{% static 'bookap1.css' %}">
+    <title>Your appointment is booked</title>
+</head>
+<body>
+    <h2 id="mess">Your appointment was successfully booked with this details</h2>
+    <center>
+        <div id="div">
+            <p>Your appointment id:{{book.ap_id}}<br>
+                Patient Name:{{book.ap_patient_fname}} &nbsp;{{book.ap_patient_lname}}<br>
+                Patient email:{{book.ap_patient_email}}<br>
+                Patient Mo. Number:{{book.ap_patient_number}}<br>
+                Cancer Type:{{book.cancer_type}}<br>
+                Appointment date and time:{{book.ap_time}}<br>
+                Hospital:{{book.h_name}}<br>
+                Doctor Name:{{book.d_name}}
+        </div>
+    </center>
+</body>
+</html>
